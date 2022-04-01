@@ -1,5 +1,8 @@
 @import '../../index.scss';
-
+a{
+    text-decoration: none;
+    color: $text-primary;
+}
 .user-card{
     border: solid 1px $bg-secondary;
     border-radius: 1rem;

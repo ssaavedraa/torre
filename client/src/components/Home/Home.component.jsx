@@ -12,7 +12,7 @@ export default function Home() {
 
     const [isLoading, setIsLoading] = useState(false)
     const [inputUser, setInputUser] = useState('')
-    const [userFound, setUserFound] = useState({})
+    const [userFound, setUserFound] = useState(null)
 
     const handleChange = (e) => {
         setInputUser(e.target.value)
@@ -40,7 +40,7 @@ export default function Home() {
         <div className="home-container">
             {isLoading && <Loading/>}
             <div className="search">
-                <div className="home-title">
+                <div className="home-title" onClick={() => setUserFound(null)}>
                     <h1>torre</h1><h1 className='co'>.co</h1>
                 </div>
                 <div className="search-bar">
@@ -58,7 +58,7 @@ export default function Home() {
                     <img src={torre} alt="torre" id='torre' />
                 </a>
             </div>
-            <UserCard user={userFound}/>
+            {userFound && <UserCard user={userFound}/> }
         </div>
     )
 }

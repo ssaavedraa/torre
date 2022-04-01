@@ -1,0 +1,21 @@
+@import '../../index.scss';
+@import '../ProfilePicture/ProfilePicture.scss';
+
+
+.detail-container{
+    font-family: $mulish;
+    border: red solid 2px;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    .user-info-card{
+        border: blue 2px solid;
+        margin: 1rem;
+        width: 50%;
+    }
+    .skills-card{
+        border: green 2px solid;
+        width: 50%;
+        margin: 1rem;
+    }
+}
