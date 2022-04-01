@@ -28,11 +28,11 @@ export default function Home() {
         })
         setIsLoading(false)
         if(response.data.status === 'error'){
-            await setUserFound({
+            setUserFound({
                 user:'User not found'
             })
         }else{
-            await setUserFound(response.data.userInfo)
+            setUserFound(response.data.userInfo)
         }
     }
 
@@ -43,10 +43,10 @@ export default function Home() {
                 <div className="home-title">
                     <h1>torre</h1><h1 className='co'>.co</h1>
                 </div>
-                <form className="search-bar">
-                    <input type="text" name="search-user" id="search-user" placeholder='Search user' onChange={handleChange}/>
+                <div className="search-bar">
+                    <input type="text" name="search-user" id="search-user" placeholder='Search user' onChange={handleChange} value={inputUser} />
                     <AiOutlineSearch className='icon' onClick={searchUser}/>
-                </form>
+                </div>
             </div>
             <div className="footer">
                 <p>Made by:</p>
