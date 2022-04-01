@@ -39,7 +39,7 @@ export default function UserDetail() {
     }
 
     const getUserStrengths = async () =>{
-        const response = await axios.get(`http://localhost:3001/user/skills`, {
+        const response = await axios.get(`/user/skills`, {
             params: {
                 user: publicId
             }
@@ -48,7 +48,7 @@ export default function UserDetail() {
     }
 
     const getUserInfo = async () => {
-        const response = await axios.get(`http://localhost:3001/user/profile`, {
+        const response = await axios.get(`/user/profile`, {
             params: {
                 user: publicId
             }
