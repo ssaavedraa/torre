@@ -12,32 +12,83 @@
     align-items: center;
     justify-content: center;
 
-    h1{
-        font-size: 50px;
-        margin: 2rem;
+    .home-title{
+        display: flex;
+        margin-bottom: 2rem;
+
+        h1{
+            font-size: 50px;
+        }
+        .co{
+            color: $text-green;
+        }
     }
 
-    .search-bar{
-        border: rgba($color: $text-primary, $alpha: 0.5) 1px solid;
+    .search{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-50%);
+
+        .search-bar{
+            border: rgba($color: $text-primary, $alpha: 0.5) 1px solid;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 2rem;
+            justify-content: center;
+            padding: 0.5rem;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+
+            input{
+                background: transparent;
+                border: none;
+                font-family: $mulish;
+                font-size: 20px;
+                width: 90%;
+                color: $text-primary;
+                outline: none;
+            }
+            .icon{
+                color: rgba($color: $text-primary, $alpha: 0.5);
+            }
+
+            .icon:hover{
+                cursor: pointer;
+            }
+        }
+
+        .search-bar:hover{
+            border-color: $bg-secondary;
+        }
+    }
+
+    .footer{
+        position: fixed;
+        bottom: 0;
+        font-size: 2vh;
         display: flex;
         flex-direction: row;
         align-items: center;
-        font-size: 2rem;
         justify-content: center;
-        padding: 0.5rem;
-        width: 80%;
-        max-width: 500px;
-        border-radius: 5px;
+        border-top:rgba($color: $bg-secondary, $alpha: 0.5) solid 2px;
+        padding: 0.5rem 0;
+        width: 100%;
 
-        input{
-            background: transparent;
-            border: none;
-            font-family: $mulish;
-            font-size: 20px;
-            width: 90%;
+        #ssaavedraa{
+            position: relative;
+            height: auto;
+            width: 180px;
         }
-        .icon{
-            color: rgba($color: $text-primary, $alpha: 0.5);
+
+        #torre{
+            position: relative;
+            width: 90px;
+            height: auto;
         }
     }
 }

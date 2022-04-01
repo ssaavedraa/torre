@@ -15,13 +15,13 @@ const getProfile = async (req, res) => {
         }
         res.json({
             status:'OK',
-            user: userInfo
+            userInfo
         })
     } catch (error) {
         console.log(error)
-        res.status(400).json({
+        res.status(200).json({
             status: 'error',
-            message: "There was a problem during the request"
+            message: "User not found"
         })
     }
 }
