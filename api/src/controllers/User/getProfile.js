@@ -11,17 +11,18 @@ const getProfile = async (req, res) => {
             picture: response.data.person.picture,
             name: response.data.person.name,
             location: response.data.person.location.name,
-            publicId: response.data.person.publicId
+            publicId: response.data.person.publicId,
+            bioSummary: response.data.person.summaryOfBio
         }
         res.json({
             status:'OK',
-            user: userInfo
+            userInfo
         })
     } catch (error) {
         console.log(error)
-        res.status(400).json({
+        res.status(200).json({
             status: 'error',
-            message: "There was a problem during the request"
+            message: "User not found"
         })
     }
 }

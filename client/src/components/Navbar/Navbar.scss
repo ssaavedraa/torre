@@ -1,0 +1,70 @@
+@import '../../index.scss';
+
+.navbar{
+    font-family: $mulish;
+    background-color: $bg-primary;
+    border-bottom: 1px solid $bg-secondary;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10vh;
+    position: absolute;
+    width: 80vw;
+    top: 0;
+
+    a{
+        text-decoration: none;
+    }
+
+    .home-title{
+        display: flex;
+        padding: 0.5rem 2rem;
+
+        h1{
+            font-size: 40px;
+            color: $text-primary;
+        }
+        .co{
+            color: $text-green;
+        }
+    }
+
+    .search-bar{
+        border: rgba($color: $text-primary, $alpha: 0.5) 1px solid;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1rem;
+        justify-content: center;
+        padding: 0.2rem;
+        height: 1.5rem;
+        @media (max-width:500px) {
+            width: 35%;;
+        }
+        width: 70%;
+        max-width: 500px;
+        border-radius: 5px;
+
+        input{
+            background: transparent;
+            border: none;
+            font-family: $mulish;
+            font-size: 18px;
+            width: 90%;
+            color: $text-primary;
+            outline: none;
+        }
+        .icon{
+            color: rgba($color: $text-primary, $alpha: 0.5);
+        }
+
+        .icon:hover{
+            cursor: pointer;
+        }
+    }
+
+    .search-bar:hover{
+        border-color: $bg-secondary;
+    }
+}

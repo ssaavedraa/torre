@@ -1,0 +1,34 @@
+@import '../../index.scss';
+
+.loading-container{
+    background-color: rgba($color: $bg-primary, $alpha: 0.7);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    transition: all 1s ease;
+    z-index: 10000;
+
+    .loading{
+        border: 10px solid rgba($color: #ccc, $alpha: 0.4);
+        border-top-color: $bg-secondary;
+        height: 5vh;
+        width: 5vh;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        animation: rotate 1.5s linear infinite;
+    }
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
