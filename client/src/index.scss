@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300');
+//text colors
+$text-primary: hsla(0,0%,100%,.9);
+$text-secondary: rgba(0,0,0,.87);
+$text-green: #cddc39;
+
+//font family
+$mulish: "Mulish","Helvetica","Arial",sans-serif;
+
+//backgrounds
+$bg-primary: #27292d;
+$bgt-secondary: #cddc39;
+
+*{
+    margin: 0;
+    padding: 0;
+}
