@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import axios from 'axios'
 import ProfilePicture from '../ProfilePicture/ProfilePicture.component'
 import { useParams } from 'react-router-dom'
-import Loading from '../Loading/Loading.component'
+import {FaUserGraduate, FaUserTag} from 'react-icons/fa'
+import {GoLocation} from 'react-icons/go'
 import './UserDetail.scss'
+import Loading from '../Loading/Loading.component'
+import Navbar from '../Navbar/Navbar.component'
+
 
 export default function UserDetail() {
 
@@ -13,11 +17,6 @@ export default function UserDetail() {
 
     const [userStrengths, setUserStrengths] = useState(null)
     const [userInfo, setUserInfo] = useState(null)
-    const [isLoading, setIsLoading] = useState(false)
-
-    // if (userStrengths) {
-    //     const strengths = [...new Set(userStrengths.map(strength => strength.proficiency))]
-    // }
 
     const renderStrengths = () => {
         proficiencyLevels = [...new Set(userStrengths.map(strength => strength.proficiency))]
@@ -25,10 +24,14 @@ export default function UserDetail() {
             proficiencyLevels.map(proficiency => {
                 return(
                     <div className="strengths">
-                        <h1>{proficiency}</h1>
-                        {userStrengths.map(skill => {
-                            return skill.proficiency === proficiency ? <p>{skill.name}, {skill.proficiency}</p> : null
-                        })}
+                        <div className="proficiency">
+                            <h1>{proficiency}</h1>
+                        </div>
+                        <div className="skills">
+                            {userStrengths.map(skill => {
+                                return skill.proficiency === proficiency ? <p className='skill'>{skill.name}</p> : null
+                            })}
+                        </div>
                     </div>
                 )
             })
@@ -56,22 +59,23 @@ export default function UserDetail() {
     useEffect(() => {
         getUserStrengths()
         getUserInfo()
-    }, [])
-
-    return(
+    },[])
+    if(!userInfo || !userStrengths) return <Loading/>
+    else return(
         <div className="detail-container">
-            {isLoading && <Loading/>}
+            <Navbar/>
             {
-                userInfo && <div className="user-info-card">
+                userInfo && <div className="card">
                     <ProfilePicture picture={userInfo.picture} publicId={userInfo.publicId}/>
-                    <h1>{userInfo.name}</h1>
-                    <h2>{userInfo.headline}</h2>
-                    <p>{userInfo.location}</p>
-                    <p>{userInfo.publicId}</p>
-                    <p>{userInfo.bioSummary}</p>
+                    <div className="info">
+                        <h1>{userInfo.name}</h1>
+                        <h2><FaUserGraduate className='icon'/>{userInfo.headline}</h2>
+                        <p><GoLocation className='icon'/>{userInfo.location}</p>
+                        <p><FaUserTag className='icon'/>{userInfo.publicId}</p>
+                    </div>
                 </div>
             }
-            <div className="skills-card">
+            <div className="card">
                 {
                     userStrengths && renderStrengths()
                 }
