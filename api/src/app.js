@@ -12,7 +12,7 @@ server.name = 'API'
 server.use(morgan('dev'))
 
 server.use((req, res, next) => {
-	res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+	res.setHeader("Access-Control-Allow-Origin", "https://torre-theta.vercel.app/user/vilmacorrea/");
 	res.setHeader("Access-Control-Allow-Credentials", "true");
 	res.setHeader(
 		"Access-Control-Allow-Headers",
